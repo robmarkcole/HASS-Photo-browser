@@ -30,7 +30,11 @@ Alternatively use an automation to recreate the `index.html` file when a new pho
       name: hassfolder
 ```
 
-Display the file on the Home Assistant front end using an Lovelace iframe card using `url: /local/index.html`:
+Display the file on the Home Assistant front end using an Lovelace [iframe card](https://www.home-assistant.io/lovelace/iframe/) using `url: /local/index.html`:
+
+<p align="center">
+<img src="https://github.com/robmarkcole/HASS-Photo-browser/blob/master/assets/usage.png" width="500">
+</p>
 
 ## Troubleshooting
 * Problem: the images haven't been updated in the iframe. Solute: In Chrome `More tools - Clear browsing data - Clear cached images and data`
