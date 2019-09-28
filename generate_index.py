@@ -20,9 +20,11 @@ def create_html(image_directory_path : str) -> None:
     html += "<button class='w3-button w3-black w3-display-left' onclick='plusDivs(-1)'>&#10094;</button>"
     html += "<button class='w3-button w3-black w3-display-right' onclick='plusDivs(1)'>&#10095;</button>"
     html += "</div><script src='js/myscripts.js'></script></body></html>"
-    with open("index.html",'w') as index_file:
+
+    index_file_location = image_directory_path + "index.html"
+    with open(index_file_location,'w') as index_file:
         index_file.write(html)
-    print(f"Created index.html file with {len(files)} images")
+    print(f"Created {index_file_location} file with {len(files)} images")
 
 
 if __name__ == "__main__":
