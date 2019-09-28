@@ -14,22 +14,21 @@ def create_html(www_directory_path : str) -> None:
     files = glob.glob(www_directory_path + "*.jpg")
     for file_path in files:
         time_string = datetime.datetime.utcnow().strftime('%A %d %b %Y %I:%M%p')
-        html += "<span class='myDate'>" + time_string + "</span>"
-        html += f"<img class='mySlides' src='{www_directory_path}" + os.path.basename(file_path) + "' style='width:100%'>"
+        html += "<span class='myDate'>" + time_string + os.path.basename(file_path) + "</span>"
+        html += f"<img class='mySlides' src='{file_path}' style='width:100%'>"
 
     html += "<button class='w3-button w3-black w3-display-left' onclick='plusDivs(-1)'>&#10094;</button>"
     html += "<button class='w3-button w3-black w3-display-right' onclick='plusDivs(1)'>&#10095;</button>"
     html += "</div><script src='js/myscripts.js'></script></body></html>"
-    print(html)
     with open("index.html",'w') as index_file:
         index_file.write(html)
+    print(f"Created index.html file with {len(files)} images")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate an index.html file from a www_directory_path")
     parser.add_argument(
         "--www_directory_path",
-        default="/config/www/",
         help="the path to your www directory",
     )
     args = parser.parse_args()

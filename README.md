@@ -1,13 +1,19 @@
 # HASS-Photo-browser
-Browse photos in your Home Assistant www folder.
+Browse `jpg` photos in your Home Assistant www folder.
 
-Creates an `index.html` file that displays all the photos in your www folder. 
+Creates an `index.html` file that displays all the photos in your `www` folder. 
 
 Taken from the thread https://community.home-assistant.io/t/image-file-browser-view-for-ha-front-end/41877/12
+
 Credit Ken Depledge
 
 ## Usage
-Use an automation to recreate the `index.html` file when a new photo is available. The automation is triggered by the [folder_watcher](https://www.home-assistant.io/components/folder_watcher/) integration. In your `automations.yaml`:
+Place the python script and `css` and `js` folders from this repository in your Home Assistant `/config/www` directory. Place your images in a subdirectory of `www` called `images`. To manually create the `index.html` file run:
+```
+$ python3 generate_index.py --www_directory_path /Users/robin/.homeassistant/www/images
+```
+
+Alternatively use an automation to recreate the `index.html` file when a new photo is available. The automation is triggered by the [folder_watcher](https://www.home-assistant.io/components/folder_watcher/) integration. In your `automations.yaml`:
 
 ```yaml
 - id: '1569591328937'
@@ -23,3 +29,5 @@ Use an automation to recreate the `index.html` file when a new photo is availabl
     event_data:
       name: hassfolder
 ```
+
+Display the file on the Home Assistant front end using an Lovelace iframe card using `url: /local/index.html`:
