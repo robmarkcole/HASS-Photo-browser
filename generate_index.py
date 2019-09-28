@@ -14,7 +14,7 @@ def create_html(www_directory_path : str) -> None:
     files = glob.glob(www_directory_path + "*.jpg")
     for file_path in files:
         time_string = datetime.datetime.utcnow().strftime('%A %d %b %Y %I:%M%p')
-        html += "<span class='myDate'>" + time_string + os.path.basename(file_path) + "</span>"
+        html += "<span class='myDate'>" + os.path.basename(file_path) + "</span>"
         html += f"<img class='mySlides' src='{file_path}' style='width:100%'>"
 
     html += "<button class='w3-button w3-black w3-display-left' onclick='plusDivs(-1)'>&#10094;</button>"
