@@ -15,6 +15,7 @@ $ python3 generate_index.py --image_directory_path /Users/robin/.homeassistant/w
 
 Alternatively use an automation to recreate the `index.html` file when a new photo is available. The automation is triggered by the [folder_watcher](https://www.home-assistant.io/components/folder_watcher/) integration. In your `automations.yaml`:
 
+NEEDS UPDATING
 ```yaml
 - id: '1569591328937'
   alias: Rebuild image index
@@ -37,4 +38,4 @@ Display the file on the Home Assistant front end using an Lovelace [iframe card]
 </p>
 
 ## Troubleshooting
-* Problem: the images haven't been updated in the iframe. Solute: In Chrome `More tools - Clear browsing data - Clear cached images and data`
+* **Problem**: the images haven't been updated in the iframe. **Solution**: In Chrome `More tools - Clear browsing data - Clear cached images and data`
