@@ -3,15 +3,15 @@ import os
 import datetime
 import argparse
 
-def create_html(www_directory_path : str) -> None:
-    www_directory_path = os.path.join(www_directory_path, "")  # If no trailing / add it
+def create_html(image_directory_path : str) -> None:
+    image_directory_path = os.path.join(image_directory_path, "")  # If no trailing / add it
     html = "<!DOCTYPE html><html><title>Front Door Images</title>"
     html += "<meta name='viewport' content='width=device-width, initial-scale=1'>"
     html += "<link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>"
     html += "<link rel='stylesheet' href='css/mycss.css'>"
     html += "<body><div class='w3-content w3-display-container'>"
 
-    files = glob.glob(www_directory_path + "*.jpg")
+    files = glob.glob(image_directory_path + "*.jpg")
     for file_path in files:
         time_string = datetime.datetime.utcnow().strftime('%A %d %b %Y %I:%M%p')
         html += "<span class='myDate'>" + os.path.basename(file_path) + "</span>"
