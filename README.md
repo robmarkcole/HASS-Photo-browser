@@ -1,7 +1,5 @@
 # HASS-Photo-browser
-Browse `jpg` photos in your Home Assistant `www` folder.
-
-Creates an `index.html` file that displays photos in subdirectories of your `www` folder. 
+Browse `jpg` photos in your Home Assistant `www/images` folder.
 
 Taken from the thread https://community.home-assistant.io/t/image-file-browser-view-for-ha-front-end/41877/12
 
@@ -19,20 +17,20 @@ config
         contains the jpg images
 ```
 
-To create the `index.html` file use a [shell_command](https://www.home-assistant.io/components/shell_command/) by adding to `configuration.yaml`:
+An `index.html` file is used to serve images on the Home Assistant front end. Use a [shell_command](https://www.home-assistant.io/components/shell_command/) to create this file by adding to `configuration.yaml`:
 ```
 shell_command:
   update_images: python3 /user/.homeassistant/www/generate_index.py --image_directory_path /user/.homeassistant/www/images
 ```
 
-Call the shell command via the `Services` tool in `Developer Tools`. Alternatively use an automation triggered by the [folder_watcher](https://www.home-assistant.io/components/folder_watcher/) integration. In your `automations.yaml`:
+Manually call the shell command via the `Services` tool in `Developer Tools`. Alternatively use an automation triggered by the [folder_watcher](https://www.home-assistant.io/components/folder_watcher/) integration. In your `automations.yaml`:
 
 NEEDS UPDATING
 ```yaml
 
 ```
 
-Display the file on the Home Assistant front end using an Lovelace [iframe card](https://www.home-assistant.io/lovelace/iframe/) using `url: /local/index.html`:
+Display the images on the Home Assistant front end using an Lovelace [iframe card](https://www.home-assistant.io/lovelace/iframe/) using `url: /local/index.html`:
 
 <p align="center">
 <img src="https://github.com/robmarkcole/HASS-Photo-browser/blob/master/assets/usage.png" width="500">
