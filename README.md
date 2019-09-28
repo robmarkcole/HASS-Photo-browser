@@ -31,3 +31,6 @@ Alternatively use an automation to recreate the `index.html` file when a new pho
 ```
 
 Display the file on the Home Assistant front end using an Lovelace iframe card using `url: /local/index.html`:
+
+## Troubleshooting
+* Problem: the images haven't been updated in the iframe. Solute: In Chrome `More tools - Clear browsing data - Clear cached images and data`
