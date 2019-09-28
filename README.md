@@ -8,7 +8,7 @@ Taken from the thread https://community.home-assistant.io/t/image-file-browser-v
 Credit [Ken Depledge](https://community.home-assistant.io/u/ken.d/summary)
 
 ## Usage
-Place the python script and `css` and `js` folders from this repository in your Home Assistant `/config/www` directory. Place your images in a subdirectory of `www` called `images` (or another subdirectory in `www`). To manually create the `index.html` file run:
+Place the python script `generate_index.py` and the `css` and `js` folders from this repository in your Home Assistant `/config/www` directory. Place your images in a subdirectory of `www` called `images` (or another subdirectory in `www`). To manually create the `index.html` file run:
 ```
 $ python3 generate_index.py --image_directory_path /Users/robin/.homeassistant/www/images
 ```
