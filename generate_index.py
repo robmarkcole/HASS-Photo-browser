@@ -26,10 +26,10 @@ def create_html(www_directory_path : str) -> None:
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate an index.html file from a www_directory_path")
+    parser = argparse.ArgumentParser(description="Generate an index.html file from a image_directory_path")
     parser.add_argument(
-        "--www_directory_path",
-        help="the path to your www directory",
+        "--image_directory_path",
+        help="the path to your images directory",
     )
     args = parser.parse_args()
-    create_html(args.www_directory_path)
+    create_html(args.image_directory_path)
