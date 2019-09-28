@@ -1,11 +1,11 @@
 # HASS-Photo-browser
-Browse `jpg` photos in your Home Assistant www folder.
+Browse `jpg` photos in your Home Assistant `www` folder.
 
-Creates an `index.html` file that displays all the photos in your `www` folder. 
+Creates an `index.html` file that displays photos in subdirectories of your `www` folder. 
 
 Taken from the thread https://community.home-assistant.io/t/image-file-browser-view-for-ha-front-end/41877/12
 
-Credit Ken Depledge
+Credit [Ken Depledge](https://community.home-assistant.io/u/ken.d/summary)
 
 ## Usage
 Place the python script and `css` and `js` folders from this repository in your Home Assistant `/config/www` directory. Place your images in a subdirectory of `www` called `images` (or another subdirectory in `www`). To manually create the `index.html` file run:
